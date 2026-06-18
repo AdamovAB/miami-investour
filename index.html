@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miami Investment Experience — Персональная инвестиционная программа</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #C9A84C;
-            --gold-light: #E8D5A3;
-            --dark: #1A1A2E;
-            --darker: #0F0F1A;
-            --text: #E8E8E8;
-            --text-muted: #A0A0B0;
+            --accent: #F4831F;
+            --accent-light: #F69220;
+            --accent-dark: #F05A22;
+            --gradient: linear-gradient(90deg, #F69220 0%, #F48421 50%, #F05A22 100%);
+            --dark: #211E1E;
+            --darker: #181616;
+            --bg: #F8F8F8;
+            --bg-white: #FFFFFF;
+            --text: #211E1E;
+            --text-muted: #777777;
+            --border: #E0E0E0;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--darker);
+            font-family: 'Nunito', sans-serif;
+            background: var(--bg);
             color: var(--text);
             line-height: 1.7;
         }
@@ -25,7 +30,7 @@
         /* HERO */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(15,15,26,0.85) 0%, rgba(26,26,46,0.7) 100%),
+            background: linear-gradient(135deg, rgba(24,22,22,0.75) 0%, rgba(33,30,30,0.6) 100%),
                         url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=1920&q=80') center/cover;
             display: flex;
             flex-direction: column;
@@ -33,85 +38,86 @@
             align-items: center;
             text-align: center;
             padding: 2rem;
+            color: #fff;
         }
         .hero-badge {
             font-size: 0.75rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--accent-light);
             margin-bottom: 2rem;
-            border: 1px solid var(--gold);
+            border: 1px solid var(--accent-light);
             padding: 0.5rem 1.5rem;
+            border-radius: 4px;
         }
         .hero h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Nunito', sans-serif;
             font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.15;
             margin-bottom: 1.5rem;
             max-width: 900px;
+            color: #fff;
         }
-        .hero h1 span { color: var(--gold); }
+        .hero h1 span { color: var(--accent-light); }
         .hero-sub {
             font-size: 1.25rem;
-            color: var(--text-muted);
+            color: rgba(255,255,255,0.8);
             max-width: 700px;
             margin-bottom: 1rem;
-            font-weight: 300;
+            font-weight: 400;
         }
         .hero-tagline {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--gold-light);
+            font-size: 1.2rem;
+            color: var(--accent-light);
             margin-bottom: 3rem;
-            font-style: italic;
+            font-weight: 600;
         }
         .cta-btn {
             display: inline-block;
             padding: 1rem 3rem;
-            background: var(--gold);
-            color: var(--darker);
-            font-weight: 600;
+            background: var(--gradient);
+            color: #fff;
+            font-weight: 700;
             font-size: 1rem;
             text-decoration: none;
             letter-spacing: 1px;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            border-radius: 8px;
         }
         .cta-btn:hover {
-            background: var(--gold-light);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201,168,76,0.3);
+            box-shadow: 0 10px 30px rgba(244,131,31,0.3);
         }
         .cta-btn-outline {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
+            border: 2px solid #fff;
+            color: #fff;
             margin-left: 1rem;
         }
         .cta-btn-outline:hover {
-            background: var(--gold);
-            color: var(--darker);
+            background: rgba(255,255,255,0.15);
+            color: #fff;
         }
 
         /* STATS */
         .stats-bar {
-            background: var(--dark);
+            background: var(--bg-white);
             padding: 3rem 2rem;
             display: flex;
             justify-content: center;
             gap: 4rem;
             flex-wrap: wrap;
-            border-top: 1px solid rgba(201,168,76,0.2);
-            border-bottom: 1px solid rgba(201,168,76,0.2);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
         .stat { text-align: center; }
         .stat-number {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 2.5rem;
-            color: var(--gold);
-            font-weight: 700;
+            color: var(--accent);
+            font-weight: 800;
         }
         .stat-label {
             font-size: 0.85rem;
@@ -128,12 +134,13 @@
             padding: 6rem 2rem;
         }
         .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 1rem;
+            font-weight: 800;
         }
-        .section-title span { color: var(--gold); }
+        .section-title span { color: var(--accent); }
         .section-sub {
             text-align: center;
             color: var(--text-muted);
@@ -144,19 +151,21 @@
 
         /* ORGANIZER */
         .organizer-block {
-            background: var(--dark);
-            border: 1px solid rgba(201,168,76,0.15);
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             padding: 3rem;
             margin-bottom: 4rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         .organizer-block h3 {
-            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            color: var(--gold-light);
+            color: var(--accent);
             margin-bottom: 1.5rem;
+            font-weight: 700;
         }
         .organizer-block p {
             color: var(--text-muted);
@@ -173,26 +182,29 @@
             margin-bottom: 2rem;
         }
         .format-card {
-            background: var(--dark);
+            background: var(--bg-white);
             padding: 2.5rem;
-            border: 1px solid rgba(201,168,76,0.15);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         }
         .format-card:hover {
-            border-color: var(--gold);
+            border-color: var(--accent);
             transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(244,131,31,0.1);
         }
         .format-icon { font-size: 2rem; margin-bottom: 1rem; }
         .format-card h3 {
-            font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
             margin-bottom: 0.75rem;
-            color: var(--gold-light);
+            color: var(--text);
+            font-weight: 700;
         }
         .format-card p { color: var(--text-muted); font-size: 0.95rem; }
 
         /* PROGRAM DAYS */
-        .program { background: var(--dark); }
+        .program { background: var(--bg-white); }
         .day-block {
             margin-bottom: 4rem;
             padding-bottom: 4rem;
@@ -206,17 +218,18 @@
             margin-bottom: 1.5rem;
         }
         .day-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--darker);
-            background: var(--gold);
+            font-size: 1rem;
+            color: #fff;
+            background: var(--gradient);
             padding: 0.5rem 1.2rem;
             font-weight: 700;
             white-space: nowrap;
+            border-radius: 8px;
         }
         .day-title {
-            font-family: 'Playfair Display', serif;
             font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text);
         }
         .day-content { padding-left: 0; }
         .day-content p {
@@ -226,7 +239,7 @@
         }
         .day-content .highlight-text {
             color: var(--text);
-            font-weight: 400;
+            font-weight: 600;
         }
         .day-list {
             list-style: none;
@@ -243,12 +256,12 @@
             content: "—";
             position: absolute;
             left: 0;
-            color: var(--gold);
+            color: var(--accent);
         }
         .day-accent {
-            color: var(--gold-light);
-            font-style: italic;
-            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.05rem;
             margin-top: 1.5rem;
             display: block;
         }
@@ -261,10 +274,11 @@
         .day-tag {
             font-size: 0.75rem;
             padding: 0.3rem 0.8rem;
-            background: rgba(201,168,76,0.1);
-            border: 1px solid rgba(201,168,76,0.3);
-            color: var(--gold-light);
+            background: rgba(244,131,31,0.08);
+            border: 1px solid rgba(244,131,31,0.25);
+            color: var(--accent-dark);
             letter-spacing: 0.5px;
+            border-radius: 4px;
         }
 
         /* INCLUDES */
@@ -278,26 +292,30 @@
             align-items: flex-start;
             gap: 1rem;
             padding: 1.5rem;
-            background: var(--dark);
-            border-left: 3px solid var(--gold);
+            background: var(--bg-white);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-        .include-item .icon { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; }
+        .include-item .icon { color: var(--accent); font-size: 1.2rem; flex-shrink: 0; }
         .include-item p { color: var(--text-muted); font-size: 0.95rem; }
 
         /* PRICING */
         .pricing-section {
-            background: linear-gradient(135deg, var(--dark) 0%, rgba(201,168,76,0.05) 100%);
-            border: 1px solid rgba(201,168,76,0.2);
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             text-align: center;
             padding: 4rem 2rem;
             max-width: 700px;
             margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
         .price {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 4rem;
-            color: var(--gold);
-            font-weight: 700;
+            color: var(--accent);
+            font-weight: 800;
         }
         .price-note {
             color: var(--text-muted);
@@ -305,13 +323,14 @@
             font-size: 0.95rem;
         }
         .price-highlight {
-            background: rgba(45,106,79,0.2);
-            border: 1px solid rgba(45,106,79,0.4);
-            color: #7DD3A8;
+            background: rgba(244,131,31,0.08);
+            border: 1px solid rgba(244,131,31,0.25);
+            color: var(--accent-dark);
             padding: 1rem 2rem;
             margin: 2rem auto;
             max-width: 500px;
             font-size: 1rem;
+            border-radius: 8px;
         }
         .price-includes {
             text-align: left;
@@ -326,7 +345,7 @@
         }
         .price-includes li::before {
             content: "✓ ";
-            color: var(--gold);
+            color: var(--accent);
             font-weight: 600;
         }
 
@@ -340,26 +359,29 @@
         .agent-photo {
             width: 280px;
             height: 350px;
-            background: linear-gradient(135deg, var(--dark), rgba(201,168,76,0.1));
-            border: 1px solid rgba(201,168,76,0.3);
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 5rem;
             flex-shrink: 0;
+            overflow: hidden;
         }
         .agent-info { flex: 1; min-width: 300px; }
         .agent-info h3 {
-            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
+            font-weight: 800;
         }
         .agent-title {
-            color: var(--gold);
+            color: var(--accent);
             font-size: 0.9rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
+            font-weight: 600;
         }
         .agent-info p { color: var(--text-muted); margin-bottom: 1rem; }
         .agent-credentials {
@@ -369,10 +391,10 @@
             margin-top: 1.5rem;
         }
         .credential { font-size: 0.85rem; color: var(--text-muted); }
-        .credential strong { color: var(--gold-light); }
+        .credential strong { color: var(--accent); }
 
         /* FORM */
-        .form-section { background: var(--dark); }
+        .form-section { background: var(--bg-white); }
         .form-container { max-width: 500px; margin: 0 auto; }
         .form-group { margin-bottom: 1.5rem; }
         .form-group label {
@@ -386,18 +408,19 @@
         .form-group textarea {
             width: 100%;
             padding: 0.9rem 1rem;
-            background: var(--darker);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: var(--bg);
+            border: 1px solid var(--border);
             color: var(--text);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 1rem;
             transition: border-color 0.3s;
+            border-radius: 8px;
         }
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--gold);
+            border-color: var(--accent);
         }
         .form-group textarea { min-height: 100px; resize: vertical; }
 
@@ -413,7 +436,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        .faq-q::after { content: "+"; color: var(--gold); font-size: 1.5rem; }
+        .faq-q::after { content: "+"; color: var(--accent); font-size: 1.5rem; }
         .faq-a {
             color: var(--text-muted);
             margin-top: 1rem;
@@ -426,11 +449,12 @@
         footer {
             text-align: center;
             padding: 3rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--border);
             color: var(--text-muted);
             font-size: 0.85rem;
+            background: var(--bg-white);
         }
-        footer a { color: var(--gold); text-decoration: none; }
+        footer a { color: var(--accent); text-decoration: none; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
@@ -791,7 +815,7 @@
         </ul>
 
         <p class="price-note" style="font-size: 0.85rem; margin-top: 2rem;">Возможен индивидуальный формат программы.<br>Также работаем дистанционно: персональные презентации, подбор объектов и формирование инвестиционных портфелей.</p>
-        <p class="price-note" style="font-size: 0.8rem; color: var(--gold-light);">*скидки и дополнительные возможности обсуждаются лично</p>
+        <p class="price-note" style="font-size: 0.8rem; color: var(--accent);">*скидки и дополнительные возможности обсуждаются лично</p>
 
         <a href="#form" class="cta-btn" style="margin-top: 2rem;">Забронировать</a>
     </div>
@@ -803,7 +827,7 @@
 
     <div class="agent-section">
         <div class="agent-photo" style="background: none; border: none;">
-            <img src="alex_photo.webp" alt="Alexander Adamov" style="width: 280px; height: 350px; object-fit: cover; border: 1px solid rgba(201,168,76,0.3);">
+            <img src="alex_photo.webp" alt="Alexander Adamov" style="width: 280px; height: 350px; object-fit: cover; border-radius: 12px;">
         </div>
         <div class="agent-info">
             <h3>Alexander Adamov</h3>
@@ -814,7 +838,7 @@
             <div class="agent-credentials">
                 <div class="credential"><strong>License #</strong> SL3624624</div>
                 <div class="credential"><strong>Brokerage:</strong> Trybal Group LLC</div>
-                <div class="credential"><strong>Company:</strong> <a href="https://remigroup.space" target="_blank" style="color: var(--gold);">REMI FS LLC</a></div>
+                <div class="credential"><strong>Company:</strong> <a href="https://remigroup.space" target="_blank" style="color: var(--accent);">REMI FS LLC</a></div>
                 <div class="credential"><strong>Markets:</strong> Miami-Dade, Broward, Palm Beach</div>
             </div>
         </div>
