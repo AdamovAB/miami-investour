@@ -4,253 +4,274 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miami Investment Experience — Персональная инвестиционная программа</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent: #F4831F;
-            --accent-light: #F69220;
-            --accent-dark: #F05A22;
-            --gradient: linear-gradient(90deg, #F69220 0%, #F48421 50%, #F05A22 100%);
-            --dark: #211E1E;
-            --darker: #181616;
-            --bg: #F8F8F8;
-            --bg-white: #FFFFFF;
-            --text: #211E1E;
-            --text-muted: #777777;
-            --border: #E0E0E0;
+            --accent: #E8732A;
+            --accent-muted: #C4884D;
+            --accent-border: #D4A055;
+            --text-primary: #1A1A1A;
+            --text-body: #3A3A3A;
+            --text-muted: #6B6B6B;
+            --border-light: #E5E5E5;
+            --bg: #FFFFFF;
+            --bg-alt: #FAFAFA;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Playfair Display', Georgia, serif;
             background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
+            color: var(--text-body);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* HERO */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(24,22,22,0.75) 0%, rgba(33,30,30,0.6) 100%),
+            background: linear-gradient(180deg, rgba(26,26,26,0.45) 0%, rgba(26,26,26,0.55) 100%),
                         url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=1920&q=80') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             color: #fff;
         }
         .hero-badge {
-            font-size: 0.75rem;
-            letter-spacing: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--accent-light);
-            margin-bottom: 2rem;
-            border: 1px solid var(--accent-light);
-            padding: 0.5rem 1.5rem;
-            border-radius: 4px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--accent-border);
+            padding: 0.6rem 2rem;
+            border-radius: 28px;
         }
         .hero h1 {
-            font-family: 'Nunito', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-            max-width: 900px;
-            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            letter-spacing: -0.01em;
         }
-        .hero h1 span { color: var(--accent-light); }
+        .hero h1 span { color: var(--accent); }
         .hero-sub {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 700px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 600px;
             margin-bottom: 1rem;
             font-weight: 400;
+            line-height: 1.8;
         }
         .hero-tagline {
-            font-size: 1.2rem;
-            color: var(--accent-light);
-            margin-bottom: 3rem;
-            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 3.5rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
         }
         .cta-btn {
-            display: inline-block;
-            padding: 1rem 3rem;
-            background: var(--gradient);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: transparent;
             color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
             transition: all 0.3s;
-            border: none;
+            border: 1px solid var(--accent-border);
             cursor: pointer;
-            border-radius: 8px;
+            border-radius: 28px;
         }
         .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(244,131,31,0.3);
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+        .cta-btn-dark {
+            color: var(--text-primary);
+            border-color: var(--accent-border);
+        }
+        .cta-btn-dark:hover {
+            background: var(--accent);
+            color: #fff;
         }
         .cta-btn-outline {
-            background: transparent;
-            border: 2px solid #fff;
-            color: #fff;
             margin-left: 1rem;
-        }
-        .cta-btn-outline:hover {
-            background: rgba(255,255,255,0.15);
-            color: #fff;
         }
 
         /* STATS */
         .stats-bar {
-            background: var(--bg-white);
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             display: flex;
             justify-content: center;
-            gap: 4rem;
+            gap: 5rem;
             flex-wrap: wrap;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-light);
         }
         .stat { text-align: center; }
         .stat-number {
-            font-family: 'Nunito', sans-serif;
-            font-size: 2.5rem;
-            color: var(--accent);
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--text-primary);
+            font-weight: 400;
         }
         .stat-label {
-            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
             color: var(--text-muted);
-            letter-spacing: 1px;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-top: 0.5rem;
         }
 
         /* SECTIONS */
         .section {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 6rem 2rem;
+            padding: 5rem 2rem;
         }
+        .section-wide { max-width: 1100px; }
         .section-title {
-            font-family: 'Nunito', sans-serif;
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             text-align: center;
-            margin-bottom: 1rem;
-            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            color: var(--text-primary);
         }
         .section-title span { color: var(--accent); }
         .section-sub {
             text-align: center;
             color: var(--text-muted);
-            max-width: 750px;
+            max-width: 600px;
             margin: 0 auto 4rem;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
         /* ORGANIZER */
         .organizer-block {
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 3rem;
-            margin-bottom: 4rem;
-            max-width: 800px;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
         }
         .organizer-block h3 {
-            font-size: 1.5rem;
-            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-primary);
             margin-bottom: 1.5rem;
-            font-weight: 700;
+            font-weight: 400;
         }
         .organizer-block p {
-            color: var(--text-muted);
+            color: var(--text-body);
             margin-bottom: 1rem;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            line-height: 1.85;
+            text-align: justify;
         }
-        .organizer-block strong { color: var(--text); }
+        .organizer-block strong { color: var(--text-primary); }
 
-        /* FORMAT */
+        /* FORMAT CARDS */
         .format-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
             margin-bottom: 2rem;
         }
         .format-card {
-            background: var(--bg-white);
-            padding: 2.5rem;
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
             transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         }
         .format-card:hover {
-            border-color: var(--accent);
+            border-color: var(--accent-border);
             transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(244,131,31,0.1);
         }
-        .format-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .format-icon { font-size: 2rem; margin-bottom: 1.2rem; }
         .format-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
         }
-        .format-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .format-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
 
         /* PROGRAM DAYS */
-        .program { background: var(--bg-white); }
-        .day-block {
-            margin-bottom: 4rem;
-            padding-bottom: 4rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        .program {
+            background: var(--bg);
+            border-top: 1px solid var(--border-light);
         }
-        .day-block:last-child { border-bottom: none; margin-bottom: 0; }
+        .day-block {
+            margin-bottom: 3.5rem;
+            padding-bottom: 3.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .day-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .day-header {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
         .day-number {
-            font-size: 1rem;
-            color: #fff;
-            background: var(--gradient);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            color: var(--accent-muted);
             padding: 0.5rem 1.2rem;
-            font-weight: 700;
+            font-weight: 600;
             white-space: nowrap;
-            border-radius: 8px;
+            border: 1px solid var(--accent-border);
+            border-radius: 28px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
         .day-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-primary);
         }
         .day-content { padding-left: 0; }
         .day-content p {
-            color: var(--text-muted);
+            color: var(--text-body);
             margin-bottom: 1rem;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            line-height: 1.85;
         }
         .day-content .highlight-text {
-            color: var(--text);
-            font-weight: 600;
+            color: var(--text-primary);
+            font-weight: 500;
         }
         .day-list {
             list-style: none;
-            margin: 1rem 0;
+            margin: 1.2rem 0;
         }
         .day-list li {
-            color: var(--text-muted);
-            padding: 0.4rem 0;
+            color: var(--text-body);
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
-            font-size: 1.05rem;
+            font-size: 1rem;
+            line-height: 1.7;
         }
         .day-list li::before {
             content: "—";
@@ -260,8 +281,8 @@
         }
         .day-accent {
             color: var(--accent);
-            font-weight: 600;
-            font-size: 1.05rem;
+            font-style: italic;
+            font-size: 1rem;
             margin-top: 1.5rem;
             display: block;
         }
@@ -272,13 +293,15 @@
             margin-top: 1.5rem;
         }
         .day-tag {
-            font-size: 0.75rem;
-            padding: 0.3rem 0.8rem;
-            background: rgba(244,131,31,0.08);
-            border: 1px solid rgba(244,131,31,0.25);
-            color: var(--accent-dark);
-            letter-spacing: 0.5px;
-            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            padding: 0.4rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            border-radius: 28px;
+            text-transform: uppercase;
         }
 
         /* INCLUDES */
@@ -291,31 +314,26 @@
             display: flex;
             align-items: flex-start;
             gap: 1rem;
-            padding: 1.5rem;
-            background: var(--bg-white);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-light);
         }
         .include-item .icon { color: var(--accent); font-size: 1.2rem; flex-shrink: 0; }
-        .include-item p { color: var(--text-muted); font-size: 0.95rem; }
+        .include-item p { color: var(--text-body); font-size: 0.95rem; line-height: 1.7; }
 
         /* PRICING */
         .pricing-section {
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: 16px;
             text-align: center;
             padding: 4rem 2rem;
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
         }
         .price {
-            font-family: 'Nunito', sans-serif;
-            font-size: 4rem;
-            color: var(--accent);
-            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--text-primary);
+            font-weight: 400;
         }
         .price-note {
             color: var(--text-muted);
@@ -323,25 +341,28 @@
             font-size: 0.95rem;
         }
         .price-highlight {
-            background: rgba(244,131,31,0.08);
-            border: 1px solid rgba(244,131,31,0.25);
-            color: var(--accent-dark);
-            padding: 1rem 2rem;
+            background: var(--bg-alt);
+            border: 1px solid var(--border-light);
+            color: var(--text-body);
+            padding: 1.2rem 2rem;
             margin: 2rem auto;
             max-width: 500px;
-            font-size: 1rem;
-            border-radius: 8px;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            line-height: 1.7;
         }
+        .price-highlight strong { color: var(--accent); }
         .price-includes {
             text-align: left;
-            max-width: 500px;
+            max-width: 480px;
             margin: 2rem auto;
         }
         .price-includes li {
             list-style: none;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            color: var(--text-muted);
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-body);
+            font-size: 0.95rem;
         }
         .price-includes li::before {
             content: "✓ ";
@@ -353,15 +374,13 @@
         .agent-section {
             display: flex;
             gap: 3rem;
-            align-items: center;
+            align-items: flex-start;
             flex-wrap: wrap;
         }
         .agent-photo {
             width: 280px;
             height: 350px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -371,37 +390,57 @@
         }
         .agent-info { flex: 1; min-width: 300px; }
         .agent-info h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
-            font-weight: 800;
+            font-weight: 400;
+            color: var(--text-primary);
         }
         .agent-title {
-            color: var(--accent);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent-muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-weight: 500;
         }
-        .agent-info p { color: var(--text-muted); margin-bottom: 1rem; }
+        .agent-info p {
+            color: var(--text-body);
+            margin-bottom: 1rem;
+            line-height: 1.85;
+            text-align: justify;
+        }
         .agent-credentials {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
             margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
         }
-        .credential { font-size: 0.85rem; color: var(--text-muted); }
+        .credential {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
         .credential strong { color: var(--accent); }
 
         /* FORM */
-        .form-section { background: var(--bg-white); }
-        .form-container { max-width: 500px; margin: 0 auto; }
+        .form-section {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border-light);
+        }
+        .form-container { max-width: 480px; margin: 0 auto; }
         .form-group { margin-bottom: 1.5rem; }
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
             color: var(--text-muted);
             margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
         .form-group input,
         .form-group select,
@@ -409,9 +448,9 @@
             width: 100%;
             padding: 0.9rem 1rem;
             background: var(--bg);
-            border: 1px solid var(--border);
-            color: var(--text);
-            font-family: 'Nunito', sans-serif;
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
+            font-family: 'Playfair Display', serif;
             font-size: 1rem;
             transition: border-color 0.3s;
             border-radius: 8px;
@@ -426,22 +465,26 @@
 
         /* FAQ */
         .faq-item {
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid var(--border-light);
             padding: 1.5rem 0;
         }
         .faq-q {
-            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: var(--text-primary);
+            font-size: 1.05rem;
         }
-        .faq-q::after { content: "+"; color: var(--accent); font-size: 1.5rem; }
+        .faq-q::after { content: "+"; color: var(--accent); font-size: 1.5rem; font-family: 'Montserrat', sans-serif; font-weight: 300; }
         .faq-a {
-            color: var(--text-muted);
+            color: var(--text-body);
             margin-top: 1rem;
             font-size: 0.95rem;
             display: none;
+            line-height: 1.85;
         }
         .faq-item.active .faq-a { display: block; }
         .faq-item.active .faq-q::after { content: "−"; }
@@ -449,21 +492,22 @@
         footer {
             text-align: center;
             padding: 3rem 2rem;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--border-light);
             color: var(--text-muted);
             font-size: 0.85rem;
-            background: var(--bg-white);
         }
         footer a { color: var(--accent); text-decoration: none; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .stats-bar { gap: 2rem; }
-            .day-header { flex-direction: column; gap: 0.5rem; }
-            .agent-section { flex-direction: column; text-align: center; }
-            .agent-credentials { justify-content: center; }
+            .stats-bar { gap: 2.5rem; }
+            .day-header { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+            .agent-section { flex-direction: column; }
+            .agent-info p { text-align: left; }
+            .agent-credentials { justify-content: flex-start; }
             .cta-btn-outline { margin-left: 0; margin-top: 1rem; }
             .hero-buttons { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+            .section { padding: 4rem 1.5rem; }
         }
     </style>
 </head>
@@ -476,8 +520,8 @@
     <p class="hero-sub">Структурированный вход на рынок недвижимости Южной Флориды</p>
     <p class="hero-tagline">Персональная программа: аналитика рынка, экспертные встречи, объекты — за 10 дней</p>
     <div class="hero-buttons">
-        <a href="#form" class="cta-btn">Забронировать место</a>
-        <a href="#program" class="cta-btn cta-btn-outline">Программа</a>
+        <a href="#form" class="cta-btn">Забронировать место →</a>
+        <a href="#program" class="cta-btn cta-btn-outline">Программа →</a>
     </div>
 </section>
 
@@ -502,7 +546,7 @@
 </div>
 
 <!-- ABOUT FORMAT -->
-<section class="section">
+<section class="section section-wide">
     <h2 class="section-title">О формате <span>программы</span></h2>
     <p class="section-sub">Персональная программа для тех, кто рассматривает рынок недвижимости Южной Флориды как инвестиционное направление</p>
 
@@ -533,7 +577,7 @@
     <!-- DAY 1 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 1</div>
+            <div class="day-number">День 1</div>
             <div class="day-title">Прилёт и погружение</div>
         </div>
         <div class="day-content">
@@ -549,7 +593,7 @@
     <!-- DAY 2 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 2</div>
+            <div class="day-number">День 2</div>
             <div class="day-title">Знакомство с Miami Beach</div>
         </div>
         <div class="day-content">
@@ -579,7 +623,7 @@
     <!-- DAY 3 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 3</div>
+            <div class="day-number">День 3</div>
             <div class="day-title">Brickell, Downtown и Edgewater</div>
         </div>
         <div class="day-content">
@@ -602,7 +646,7 @@
     <!-- DAY 4 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 4</div>
+            <div class="day-number">День 4</div>
             <div class="day-title">Sunny Isles Beach</div>
         </div>
         <div class="day-content">
@@ -625,7 +669,7 @@
     <!-- DAY 5 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 5</div>
+            <div class="day-number">День 5</div>
             <div class="day-title">Coral Gables и Coconut Grove</div>
         </div>
         <div class="day-content">
@@ -649,7 +693,7 @@
     <!-- DAY 6 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 6</div>
+            <div class="day-number">День 6</div>
             <div class="day-title">Девелопмент и создание капитала</div>
         </div>
         <div class="day-content">
@@ -672,7 +716,7 @@
     <!-- DAY 7 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 7</div>
+            <div class="day-number">День 7</div>
             <div class="day-title">Palm Beach</div>
         </div>
         <div class="day-content">
@@ -696,7 +740,7 @@
     <!-- DAY 8 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 8</div>
+            <div class="day-number">День 8</div>
             <div class="day-title">Отдых и нетворкинг</div>
         </div>
         <div class="day-content">
@@ -715,7 +759,7 @@
     <!-- DAY 9 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 9</div>
+            <div class="day-number">День 9</div>
             <div class="day-title">Решения, деньги и сделки</div>
         </div>
         <div class="day-content">
@@ -737,7 +781,7 @@
     <!-- DAY 10 -->
     <div class="day-block">
         <div class="day-header">
-            <div class="day-number">ДЕНЬ 10</div>
+            <div class="day-number">День 10</div>
             <div class="day-title">Вылет — но работа продолжается</div>
         </div>
         <div class="day-content">
@@ -757,7 +801,7 @@
 </section>
 
 <!-- WHAT'S INCLUDED -->
-<section class="section">
+<section class="section section-wide">
     <h2 class="section-title">Что <span>включено</span></h2>
 
     <div class="includes-grid">
@@ -817,17 +861,17 @@
         <p class="price-note" style="font-size: 0.85rem; margin-top: 2rem;">Возможен индивидуальный формат программы.<br>Также работаем дистанционно: персональные презентации, подбор объектов и формирование инвестиционных портфелей.</p>
         <p class="price-note" style="font-size: 0.8rem; color: var(--accent);">*скидки и дополнительные возможности обсуждаются лично</p>
 
-        <a href="#form" class="cta-btn" style="margin-top: 2rem;">Забронировать</a>
+        <a href="#form" class="cta-btn cta-btn-dark" style="margin-top: 2rem;">Забронировать →</a>
     </div>
 </section>
 
 <!-- AGENT -->
-<section class="section">
+<section class="section section-wide">
     <h2 class="section-title">Ваш <span>агент</span></h2>
 
     <div class="agent-section">
         <div class="agent-photo" style="background: none; border: none;">
-            <img src="alex_photo.webp" alt="Alexander Adamov" style="width: 280px; height: 350px; object-fit: cover; border-radius: 12px;">
+            <img src="alex_photo.webp" alt="Alexander Adamov" style="width: 280px; height: 350px; object-fit: cover; border-radius: 16px;">
         </div>
         <div class="agent-info">
             <h3>Alexander Adamov</h3>
@@ -918,19 +962,19 @@
             </select>
         </div>
         <div class="form-group">
-            <label>Предпочтительные даты (опционально)</label>
+            <label>Предпочтительные даты</label>
             <input type="text" placeholder="Октябрь-ноябрь 2026">
         </div>
         <div class="form-group">
             <label>Комментарий</label>
             <textarea placeholder="Расскажите о ваших целях, опыте инвестирования, вопросах..."></textarea>
         </div>
-        <button class="cta-btn" style="width: 100%; text-align: center;">Отправить заявку</button>
+        <button class="cta-btn cta-btn-dark" style="width: 100%; justify-content: center;">Отправить заявку →</button>
     </div>
 </section>
 
 <footer>
-    <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 0.75rem; color: #666; line-height: 1.6;">
+    <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 0.75rem; color: #999; line-height: 1.6;">
         Disclaimer: Данная программа является услугой консультирования в сфере недвижимости, оказываемой лицензированным агентом по недвижимости штата Флорида (License # SL3624624) через Trybal Group LLC. Программа не является туристической услугой и не включает организацию перевозок, размещения или экскурсионного обслуживания. Рекомендации по проживанию, ресторанам, активностям и логистике носят информационный характер; все расходы на проживание, питание, транспорт и активности (яхта, рыбалка, гольф и т.д.) несёт участник самостоятельно. Все услуги, требующие профессионального лицензирования (юридические, налоговые, финансовые, иммиграционные консультации, ипотечное кредитование), выполняются привлечёнными лицензированными специалистами. Организатор программы не оказывает данные услуги самостоятельно.
     </p>
     <p>© 2026 Alex Adamov — Licensed Real Estate Agent</p>
