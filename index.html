@@ -938,8 +938,15 @@
             <label>Комментарий</label>
             <textarea name="comment" placeholder="Расскажите о ваших целях, опыте инвестирования, вопросах..."></textarea>
         </div>
-        <button type="submit" class="cta-btn cta-btn-dark" style="width: 100%; justify-content: center;">Отправить заявку →</button>
+        <button type="submit" class="cta-btn cta-btn-dark" style="width: 100%; justify-content: center;" onclick="this.form.submit();">Отправить заявку →</button>
     </form>
+    <script>
+    document.querySelector('.form-container').addEventListener('submit', function(e) {
+        var btn = this.querySelector('button[type=submit]');
+        btn.textContent = 'Отправляем...';
+        btn.disabled = true;
+    });
+    </script>
 </section>
 
 <footer>
