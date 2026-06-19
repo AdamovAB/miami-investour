@@ -891,22 +891,26 @@
     <h2 class="section-title">Оставить <span>заявку</span></h2>
     <p class="section-sub">Заполните форму — мы свяжемся в течение 24 часов для персонального обсуждения</p>
 
-    <div class="form-container">
+    <form class="form-container" action="https://formsubmit.co/adams.strategist@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Новая заявка — Инвест-тур в Майами">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://adamovrealty.com?submitted=true">
         <div class="form-group">
             <label>Имя и фамилия</label>
-            <input type="text" placeholder="Ваше имя">
+            <input type="text" name="name" placeholder="Ваше имя" required>
         </div>
         <div class="form-group">
             <label>Email</label>
-            <input type="email" placeholder="your@email.com">
+            <input type="email" name="email" placeholder="your@email.com" required>
         </div>
         <div class="form-group">
             <label>Телефон / WhatsApp</label>
-            <input type="tel" placeholder="+1 (___) ___-____">
+            <input type="tel" name="phone" placeholder="+1 (___) ___-____">
         </div>
         <div class="form-group">
             <label>Инвестиционный бюджет</label>
-            <select>
+            <select name="budget">
                 <option value="">Выберите диапазон</option>
                 <option>$300K — $500K</option>
                 <option>$500K — $1M</option>
@@ -916,7 +920,7 @@
         </div>
         <div class="form-group">
             <label>Интересующий тип недвижимости</label>
-            <select>
+            <select name="property_type">
                 <option value="">Выберите тип</option>
                 <option>Квартира / Condo</option>
                 <option>Дом / Single Family</option>
@@ -928,14 +932,14 @@
         </div>
         <div class="form-group">
             <label>Предпочтительные даты</label>
-            <input type="text" placeholder="Например: октябрь 2026, первая неделя ноября">
+            <input type="text" name="dates" placeholder="Например: октябрь 2026, первая неделя ноября">
         </div>
         <div class="form-group">
             <label>Комментарий</label>
-            <textarea placeholder="Расскажите о ваших целях, опыте инвестирования, вопросах..."></textarea>
+            <textarea name="comment" placeholder="Расскажите о ваших целях, опыте инвестирования, вопросах..."></textarea>
         </div>
-        <button class="cta-btn cta-btn-dark" style="width: 100%; justify-content: center;">Отправить заявку →</button>
-    </div>
+        <button type="submit" class="cta-btn cta-btn-dark" style="width: 100%; justify-content: center;">Отправить заявку →</button>
+    </form>
 </section>
 
 <footer>
